@@ -232,7 +232,7 @@ module Rack
     def parse_cookies_from_header
       cookies = Hash.new
       if headers.has_key? 'Set-Cookie'
-        set_cookie_header = headers.fetch('Set-Cookie')
+        set_cookie_header = headers['Set-Cookie']
         Array(set_cookie_header).each do |header_value|
           header_value.split("\n").each do |cookie|
             cookie_name, cookie_filling = cookie.split('=', 2)
